@@ -6,8 +6,7 @@
 </template>
 
 <script>
-import topBar from "./components/common/topBar";
-
+import topBar from "./components/common/topBar"
 export default {
   name: "App",
   components: {
@@ -22,6 +21,10 @@ export default {
 
 html,
 body {
+  width: 100%;
+  height: 100%;
+}
+#app{
   width: 100%;
   height: 100%;
 }
