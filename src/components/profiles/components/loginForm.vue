@@ -1,5 +1,9 @@
 <template>
   <div class="loginform">
+    <!-- logo -->
+    <a href @click.prevent class="logo">
+      <img src="../images/logo_lg.png" alt />
+    </a>
     <ul>
       <li @click="normalLogin = true" :class="{'isActive': normalLogin}">账号密码登录</li>
       <li @click="normalLogin = false" :class="{'isActive': !normalLogin}">短信验证码登录</li>
@@ -149,6 +153,18 @@ export default {
   justify-content: center;
   // flex-wrap: wrap;
   padding: 0 84px;
+  a.logo {
+    border-top: 4px solid transparent;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90px;
+    margin: 10px 0 34px 0;
+    img {
+      width: 274px;
+      height: 90px;
+    }
+  }
   img {
     width: 26px;
     height: 26px;

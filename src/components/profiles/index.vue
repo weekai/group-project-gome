@@ -5,11 +5,7 @@
         <i class="iconfont icon_arrow_left"></i>
       </div>
     </top-bar>
-    <!-- logo -->
-    <a href @click.prevent>
-      <img src="./images/logo_lg.png" alt />
-    </a>
-    <section class="login_wrap"></section>
+   
     <!-- 登录表单 -->
     <login-form></login-form>
   </div>
@@ -49,18 +45,6 @@ export default {
         font-size: 48px;
         // font-weight: bold;
       }
-    }
-  }
-  a {
-    border-top: 4px solid transparent;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 90px;
-    margin: 10px 0 34px 0;
-    img {
-      width: 274px;
-      height: 90px;
     }
   }
 }
