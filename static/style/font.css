@@ -14,3 +14,20 @@
 .icon_search::before{
     content: '\e6c6';
 }
+
+.icon_arrow_left::before{
+    content: '\e610';
+}
+
+.icon_lock::before{
+    content: '\e699';
+}
+
+.icon_phone::before{
+    content: '\e606';
+}
+
+.icon_key::before{
+    content: '\e611';
+}
+
