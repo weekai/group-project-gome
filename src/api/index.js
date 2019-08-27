@@ -14,3 +14,7 @@ export function getBanners () {
 export function getGuessLike () {
     return axios.get('/home/getGuessLike')
   }
+  
+  export function getNavShotcuts () {
+      return axios.get('/home/getNavShotcuts')
+    }

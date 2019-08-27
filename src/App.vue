@@ -27,4 +27,3 @@ body {
   padding-left: calc(100vw - 100%);
 }
 </style>
-
