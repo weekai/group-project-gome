@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Category from '@/components/category/index.vue'
 const Home = () => import('../components/home/index.vue')
 const Profiles = () => import('../components/profiles/index.vue')
+
 
 Vue.use(Router)
 
@@ -20,8 +22,8 @@ export default new Router({
     },
     {
       path: '/category',
-      name: 'category',
-      component: Home
+      name: 'Category',
+      component: Category
     },
     {
       path: '/optimization',

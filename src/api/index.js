@@ -13,8 +13,14 @@ export function getBanners () {
   }
 export function getGuessLike () {
     return axios.get('/home/getGuessLike')
+
   }
-  
-  export function getNavShotcuts () {
-      return axios.get('/home/getNavShotcuts')
-    }
+//获取列表页左侧数据
+export function getCateList () {
+    return axios.get('/category/cateLeftList')
+ }
+ 
+export function getNavShotcuts () {
+    return axios.get('/home/getNavShotcuts')
+ }
+
