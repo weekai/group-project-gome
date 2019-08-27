@@ -1,0 +1,16 @@
+/* 字体图标 */
+@font-face {
+  font-family: 'myfont';
+  src: url('../fonts/iconfont.eot') format('embedded-opentype'),
+    url('../fonts/iconfont.svg') format('svg'),
+    url('../fonts/iconfont.ttf') format('truetype'),
+    url('../fonts/iconfont.woff') format('woff');
+}
+
+[class^='iconfont'],[class*=' iconfont']{
+    font-family: 'myfont'
+}
+
+.icon_search::before{
+    content: '\e6c6';
+}
