@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home/index.vue'
+
 import Category from '@/components/category/index.vue'
+const Home = () => import('../components/home/index.vue')
+const Profiles = () => import('../components/profiles/index.vue')
+
 
 Vue.use(Router)
 
@@ -10,7 +13,7 @@ export default new Router({
     {
       path: '/',
       name: '',
-      redirect:'/home' 
+      redirect: '/home'
     },
     {
       path: '/home',
@@ -22,5 +25,21 @@ export default new Router({
       name: 'Category',
       component: Category
     },
-  ]
+    {
+      path: '/optimization',
+      name: 'optimization',
+      component: Home
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Home
+    },
+    {
+      path: '/profiles',
+      name: 'profiles',
+      component: Profiles
+    }
+  ],
+  linkActiveClass: 'is_active'
 })

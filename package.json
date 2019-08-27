@@ -15,6 +15,7 @@
     "better-scroll": "^1.15.2",
     "fastclick": "^1.0.6",
     "lib-flexible": "^0.3.2",
+    "mint-ui": "^2.2.13",
     "postcss-px2rem-exclude": "0.0.6",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^3.1.3",

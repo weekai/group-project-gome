@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <top-bar></top-bar>
     <router-view />
   </div>
 </template>
 
 <script>
 import topBar from "./components/common/topBar"
+
 export default {
   name: "App",
-  components: {
-    topBar
-  }
+  components: {}
 };
 </script>
 
@@ -19,14 +17,19 @@ export default {
 @import url("../static/style/reset.css");
 @import url("../static/style/font.css");
 
-html,
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 body {
-  width: 100%;
-  height: 100%;
+  // 解决unable to preventDefault
+  touch-action: none; 
+  width: 100vw;
+  overflow: hidden;
+  padding-left: calc(100vw - 100%);
 }
 #app{
   width: 100%;
   height: 100%;
 }
 </style>
-
