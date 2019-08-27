@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-import topBar from '../components/common/topBar.vue'
+import Home from '@/components/home/index.vue'
 
 Vue.use(Router)
 
@@ -9,7 +8,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      // component: ''
+      name: '',
+      redirect:'/home' 
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: Home
     },
   ]
 })
