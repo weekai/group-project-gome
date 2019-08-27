@@ -3,6 +3,10 @@ import App from './App'
 import router from './router'
 import FastClick from 'fastclick'
 import 'lib-flexible'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper)
 
 // 300ms延迟
 FastClick.attach(document.body)
