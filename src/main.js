@@ -8,6 +8,7 @@ import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper)
 
+
 // 300ms延迟
 FastClick.attach(document.body)
 
