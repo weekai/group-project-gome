@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <top-bar></top-bar>
     <router-view />
   </div>
 </template>
 
 <script>
-import topBar from "./components/common/topBar";
 
 export default {
   name: "App",
   components: {
-    topBar
   }
 };
 </script>
@@ -26,4 +23,3 @@ body {
   height: 100%;
 }
 </style>
-
