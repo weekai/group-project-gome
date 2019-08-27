@@ -20,11 +20,9 @@ export default {};
 .topbar {
   width: 100%;
   height: 100px;
-  //   background: #aaa;
+  // background: #aaa;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-  box-sizing: border-box;
+  align-items: center; 
 }
 </style>

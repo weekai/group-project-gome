@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   <top-bar>
+    <top-bar>
        <slot>aaa</slot>
     </top-bar>
 
@@ -36,6 +36,9 @@ import Swiper from "./components/swiper.vue"
 import Category from "./components/category.vue"
 import Headline from "./components/headline.vue"
 import GuessLike from "./components/guessLike.vue"
+import TabBar from "../common/tabBar"
+import TopBar from "../common/topBar"
+
 export default {
   components: {
     TopBar,
@@ -43,7 +46,6 @@ export default {
     Category,
     Headline,
     GuessLike
-
   }
 }
 </script>
