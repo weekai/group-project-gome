@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Category from '@/components/category/index.vue'
 const Home = () => import('../components/home/index.vue')
 const Profiles = () => import('../components/profiles/index.vue')
+const Optimization = () => import('../components/optimization/index.vue')
 
 
 Vue.use(Router)
@@ -28,7 +29,7 @@ export default new Router({
     {
       path: '/optimization',
       name: 'optimization',
-      component: Home
+      component: Optimization
     },
     {
       path: '/cart',
