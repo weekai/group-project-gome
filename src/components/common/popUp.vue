@@ -2,22 +2,24 @@
   <div>
     <div class="pop">
       <ul slot="pop" class="popup">
-        <li @click="goHome">
+        <router-link to="/home" tag="li">
           <img src="../../assets/images/pop_home.png" alt />
           <p>首页</p>
-        </li>
-        <li>
+        </router-link>
+
+        <router-link to="/category" tag="li">
           <img src="../../assets/images/pop_cate.png" alt />
           <p>分类搜索</p>
-        </li>
-        <li>
+        </router-link>
+        <router-link to="/cart" tag="li">
           <img src="../../assets/images/pop_cart.png" alt />
           <p>购物车</p>
-        </li>
-        <li>
+        </router-link>
+
+        <router-link to="/profiles" tag="li">
           <img src="../../assets/images/pop_profiles.png" alt />
           <p>我的国美</p>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -26,7 +28,7 @@
 <script>
 export default {
   methods: {
-    goHome(){
+    goHome() {
       this.$router.push("/home");
     }
   }
