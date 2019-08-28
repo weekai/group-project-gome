@@ -153,7 +153,7 @@ export default {
         timeout: 1000
       }).then(res => {
         console.log(res);
-        if (res.data.code == 0 && res.data.success == true) {
+        if (res.code == 0 && res.success == true) {
           this.islogin = true;
           this.$store.commit("changeIsLoginStatus", this.islogin);
           this.$router.push("/home");

@@ -34,3 +34,7 @@
 .icon_more::before{
     content: '\e634';
 }
+
+.icon_arrow_top::before{
+    content: '\e623';
+}
