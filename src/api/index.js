@@ -1,6 +1,8 @@
 import axios from 'axios'
 axios.defaults.baseURL = 'http://192.168.1.14:3000/api'
 
+
+// axios.defaults.withCredentials = true
 axios.interceptors.response.use(function (response) {
     return response.data
   }, function (error) {
