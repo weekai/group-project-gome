@@ -11,12 +11,15 @@ import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper)
 
-
-
 // 300ms延迟
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+})
 
 /* eslint-disable no-new */
 new Vue({
