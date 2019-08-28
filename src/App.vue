@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import topBar from "./components/common/topBar"
+
 export default {
   name: "App",
   components: {}
@@ -26,5 +28,8 @@ body {
   overflow: hidden;
   padding-left: calc(100vw - 100%);
 }
+#app{
+  width: 100%;
+  height: 100%;
+}
 </style>
-
