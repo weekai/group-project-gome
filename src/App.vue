@@ -2,6 +2,7 @@
   <div id="app">
     <router-view />
   </div>
+
 </template>
 
 <script>
@@ -24,7 +25,7 @@ height: 100%;
 }
 body {
   // 解决unable to preventDefault
-  touch-action: none; 
+  touch-action: none;
   width: 100vw;
   overflow: hidden;
   padding-left: calc(100vw - 100%);

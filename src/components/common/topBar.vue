@@ -19,10 +19,10 @@ export default {};
 <style lang="less" scoped>
 .topbar {
   width: 100%;
-  height: 100px;
+  height: 90px;
   // background: #aaa;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 </style>
