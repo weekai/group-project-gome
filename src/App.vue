@@ -20,6 +20,7 @@ export default {
 html {
   overflow-x: hidden;
   overflow-y: auto;
+height: 100%;
 }
 body {
   // 解决unable to preventDefault
@@ -27,6 +28,7 @@ body {
   width: 100vw;
   overflow: hidden;
   padding-left: calc(100vw - 100%);
+height: 100%;
 }
 #app{
   width: 100%;
