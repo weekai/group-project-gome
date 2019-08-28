@@ -13,7 +13,7 @@ export default {
   name: 'carrousel',
   created () {
     getBanners().then((data) => {
-        console.log(data.result.data)
+        // console.log(data.result.data)
       this.swiperSlides = data.result.data
     })
   },
@@ -30,4 +30,8 @@ export default {
   }
 }
 </script>
-
+<style lang="less" scoped>
+  .s-img{
+    width: 100%;
+  }
+</style>
