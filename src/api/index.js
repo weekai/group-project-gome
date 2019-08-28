@@ -24,3 +24,7 @@ export function getNavShotcuts () {
     return axios.get('/home/getNavShotcuts')
  }
 
+ // 获取优选列表数据
+export function getOptList() {
+  return axios.get('/category/optimization')
+}
