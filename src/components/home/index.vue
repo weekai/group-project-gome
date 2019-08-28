@@ -37,7 +37,7 @@ import Category from "./components/category.vue"
 import Headline from "./components/headline.vue"
 import GuessLike from "./components/guessLike.vue"
 import TabBar from "../common/tabBar"
-import TopBar from "../common/topBar"
+// import TopBar from "../common/topBar"
 
 export default {
   components: {
