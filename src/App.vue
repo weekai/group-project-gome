@@ -35,4 +35,11 @@ height: 100%;
   width: 100%;
   height: 100%;
 }
+// .ly-tab-item-label{
+//   color:#333;
+// }
+
+.ly-tab-item{
+color:#333;
+}
 </style>
