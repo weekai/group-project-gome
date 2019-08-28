@@ -16,6 +16,12 @@
     <OptFooter></OptFooter>
     <!-- 详细地址电话 -->
     <OptFootTel></OptFootTel>
+    <!-- 右侧广告 -->
+    <OptGg></OptGg>
+    <!-- 右侧购物车图标 -->
+    <OptCart></OptCart>
+    <!-- 右侧返回顶部图标 -->
+    <OptBackTop></OptBackTop>
   </div>
 </template>
 <script>
@@ -31,6 +37,12 @@ import OptLookOver from "./components/optLookOver";
 import OptFooter from "./components/optFooter";
 // 导入组件---底部详细地址电话
 import OptFootTel from "./components/optFootTel";
+// 导入组件---右侧广告
+import OptGg from "./components/optGg";
+// 导入组件---右侧购物车图标
+import OptCart from "./components/optCart";
+// 导入组件---右侧返回顶部图标
+import OptBackTop from "./components/optBackTop";
 export default {
   components: {
     OptTop,
@@ -38,7 +50,10 @@ export default {
     OptConList,
     OptLookOver,
     OptFooter,
-    OptFootTel
+    OptFootTel,
+    OptGg,
+    OptCart,
+    OptBackTop
   }
 };
 </script>
