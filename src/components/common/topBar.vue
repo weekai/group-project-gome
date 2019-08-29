@@ -27,7 +27,7 @@ export default {};
   align-items: center;
   padding: 0 30px;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   .left {
     // background: red;
     font-size: 42px;

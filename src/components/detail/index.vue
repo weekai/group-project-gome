@@ -38,14 +38,15 @@ export default {
 <style lang="less" scoped>
 .top-center {
   height: 100%;
-
-  .is_active {
-    color: #f20c59;
-  }
   span {
     display: inline-block;
-    height: 100%;
+    height: 94%;
     font-size: 32px;
+    padding: 0 20px;
+  }
+  .is_active {
+    border-bottom: 4px solid #f20c59;
+    color: #f20c59;
   }
 }
 </style>

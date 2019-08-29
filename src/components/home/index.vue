@@ -40,7 +40,7 @@
       <div slot="center" class="center">
         <div class="search" @click="flag=!flag">
           <i class="iconfont icon_search"></i>
-          <input readonly type="text" placeholder="搜索商品" />
+          <input readonly type="text" placeholder="电视内购会领50元券" />
         </div>
       </div>
       <div slot="right" class="right">
@@ -183,31 +183,27 @@
       box-sizing: border-box;
 
       .left {
-        width: 7%;
-        margin-right: 24px;
-
+        width: 60px;
         img {
           width: 57.6px;
           height: 57.6px;
         }
       }
-
       .center {
+        flex: 1;
         display: flex;
         position: relative;
-        width: 432px;
-
+        font-size: 24px;
         i {
           position: absolute;
           left: 24px;
-          top: 50%;
+          top: 52%;
           transform: translateY(-50%);
           font-size: 38px;
           color: #999;
         }
 
         input {
-          width: 100%;
           height: 72px;
           border-radius: 36px;
           padding-left: 72px;
@@ -218,7 +214,7 @@
       }
 
       .right {
-        width: 140px;
+        width: 160px;
         display: flex;
         justify-content: space-around;
         align-items: center;

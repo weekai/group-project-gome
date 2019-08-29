@@ -27,30 +27,19 @@ export default {
   methods: {
     changeCate(index) {
       var cid = index + 101;
-
-      // getCateList(cid).then(data => {
-      //   console.log(cid)
-      //   console.log(data);
-
-      // });
       this.currentIndex = index;
       bus.$emit("getCid", cid);
-      // console.log(typeof index)
-      // console.log(101+ index)
-      // event.target.parentNode.parentNode.scrollTo(0);
-      // // event.target.offsetTop = 96;
-      // document.getElementsByClassName('wrapper')[0].scrollTop = '0px';
-      // // event.target.parentNode.parentNode.scrollTop = 96;
-      // console.log(event.target);
-      // console.log(event.target.parentNode.parentNode);
     }
   },
   created() {
     getCateList().then(data => {
-      // console.log(data.result)
       this.cateList = data.result;
       this.$nextTick(() => {
-        new BScroll(".wrapper");
+        new BScroll(".wrapper", {
+          click: true,
+          bounce: false,
+          bounceTime: 200
+        });
       });
     });
   }
@@ -66,7 +55,7 @@ export default {
       height: 96px;
       text-align: center;
       line-height: 96px;
-      font-size: 30px;
+      font-size: 26px;
       background: #f0f0f0;
       position: relative;
       &::after {
@@ -80,8 +69,6 @@ export default {
       }
     }
     .on {
-      // height: 96px;
-      // width: 4px;
       background: #ffffff;
       color: #f20c59;
       &::after {

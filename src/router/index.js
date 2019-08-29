@@ -17,7 +17,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: '',
       redirect: '/home'
     },
     {
@@ -42,20 +41,8 @@ export default new Router({
       path: '/detail',
       name: 'detail',
       component: Detail,
-      meta: {
-        cache: true,
-        title: '商品'
-      },
-      children:[
-        {
-          path: '/',
-          name: 'good',
-          component: Good,
-          meta: {
-            cache: true,
-            title: '商品介绍'
-          },
-        },
+      redirect:'/detail/good',
+      children: [
         {
           path: 'good',
           name: 'good',
