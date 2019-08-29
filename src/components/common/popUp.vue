@@ -63,6 +63,16 @@ export default {
   .popup {
     display: flex;
     flex-direction: column;
+
+    &::after {
+      content: "";
+      height: 0px;
+      width: 100%;
+      border: 2px solid rgba(255, 255, 255, 0.94);
+      position: absolute;
+      bottom: -1px;
+      box-sizing: border-box;
+    }
     li {
       height: 100px;
       display: flex;
@@ -75,7 +85,8 @@ export default {
       }
       p {
         flex: 1;
-        line-height: 80px;
+        height: 100%;
+        line-height: 100px;
         font-size: 32px;
         font-weight: normal;
         width: 200px;
