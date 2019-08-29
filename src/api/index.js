@@ -28,3 +28,8 @@ export function getNavShotcuts () {
 export function getOptList() {
   return axios.get('/category/optimization')
 }
+
+// 
+export function getProfileGuessLike(){
+  return axios.get('/profiles/profilesGuessLike')
+}
