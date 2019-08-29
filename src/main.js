@@ -11,7 +11,6 @@ import 'swiper/dist/css/swiper.css'
 import LyTab from 'ly-tab'
 import { Lazyload } from "mint-ui";
 
-
 Vue.use(Lazyload)
 Vue.use(LyTab)
 Vue.use(VueAwesomeSwiper)
