@@ -40,7 +40,7 @@ export default{
                   width: 156px;
               }
               p{
-                margin-top: 10px;
+                margin-top: 12px;
                 font-size: 24px;
               }
           }

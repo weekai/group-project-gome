@@ -17,5 +17,6 @@ export default {};
 .userinfo {
   width: 100%;
   height: auto;
+  overflow: hidden;
 }
 </style>

@@ -1,9 +1,9 @@
 import axios from 'axios'
 axios.defaults.baseURL = 'http://192.168.1.14:3000/api'
 
-axios.interceptors.response.use(function(response) {
+axios.interceptors.response.use(function (response) {
   return response.data
-}, function(error) {
+}, function (error) {
   return Promise.reject(error)
 })
 
@@ -34,18 +34,17 @@ export function getNavShotcuts() {
 // 国美头条
 export function getHeadline() {
   return axios.get('/home/headline')
-
- //获取列表页右侧数据
-export function getCateListRight (cid) {
+}
+//获取列表页右侧数据
+export function getCateListRight(cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
 }
 
- // 获取优选列表数据
+// 获取优选列表数据
 export function getOptList() {
   return axios.get('/category/optimization')
 }
 
-// 
-export function getProfileGuessLike(){
+export function getProfileGuessLike() {
   return axios.get('/profiles/profilesGuessLike')
 }
