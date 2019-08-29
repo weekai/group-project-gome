@@ -8,7 +8,7 @@
     <img class="menu" src="../images/more.png" alt />
   </div>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 .search {
   width: 100%;
   display: flex;

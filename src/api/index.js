@@ -17,8 +17,13 @@ export function getGuessLike () {
   }
 //获取列表页左侧数据
 export function getCateList () {
-    return axios.get('/category/cateLeftList')
+    return axios.get(`/category/cateLeftList`)
  }
+
+ //获取列表页右侧数据
+export function getCateListRight (cid) {
+  return axios.get(`/category/cateRightList?cid=${cid}`)
+}
  
 export function getNavShotcuts () {
     return axios.get('/home/getNavShotcuts')

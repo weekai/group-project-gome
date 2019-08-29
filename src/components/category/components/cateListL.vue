@@ -6,8 +6,8 @@
         v-for="(item,index) in cateList"
         :key="index"
         :class="currentIndex == index? 'on':'' "
-        @click="changeCata(index)"
-      >{{item}}</li>
+        @click="changeCate(index)"
+      >{{item.catalog}}</li>
     </ul>
   </div>
 </template>
@@ -15,6 +15,8 @@
 <script>
 import { getCateList } from "@/api/index.js";
 import BScroll from "@better-scroll/core";
+import bus from "./bus.js";
+
 export default {
   data() {
     return {
@@ -23,14 +25,30 @@ export default {
     };
   },
   methods: {
-    changeCata(index) {
+    changeCate(index) {
+      var cid = index + 101;
+
+      // getCateList(cid).then(data => {
+      //   console.log(cid)
+      //   console.log(data);
+
+      // });
       this.currentIndex = index;
-      console.log(this.currentIndex)
+      bus.$emit("getCid", cid);
+      // console.log(typeof index)
+      // console.log(101+ index)
+      // event.target.parentNode.parentNode.scrollTo(0);
+      // // event.target.offsetTop = 96;
+      // document.getElementsByClassName('wrapper')[0].scrollTop = '0px';
+      // // event.target.parentNode.parentNode.scrollTop = 96;
+      // console.log(event.target);
+      // console.log(event.target.parentNode.parentNode);
     }
   },
   created() {
     getCateList().then(data => {
-      this.cateList = data.result.data;
+      // console.log(data.result)
+      this.cateList = data.result;
       this.$nextTick(() => {
         new BScroll(".wrapper");
       });
@@ -38,7 +56,7 @@ export default {
   }
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .l-content {
   height: 100%;
   ul {
