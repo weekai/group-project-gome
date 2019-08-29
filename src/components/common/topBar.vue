@@ -23,6 +23,6 @@ export default {};
   // background: #aaa;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 </style>
