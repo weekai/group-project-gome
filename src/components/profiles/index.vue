@@ -1,9 +1,9 @@
 <template>
   <div class="profiles">
     <top-bar>
-      <div slot="left" @click="goHome">
+      <router-link tag="div" to="/home" slot="left">
         <i class="iconfont icon_arrow_left"></i>
-      </div>
+      </router-link>
       <div slot="center" class="center" v-if="isLogin">我的国美</div>
       <div slot="right" class="right" v-if="isLogin" @click="ispop = !ispop">
         <i class="iconfont icon_more"></i>
@@ -145,6 +145,13 @@
         <i class="iconfont icon_arrow_top"></i>
         你可能喜欢
       </line-text>
+      <guess-like slot="guesslike">
+        <guess-like-item />
+        <line-text slot="linetext">
+          <i class="iconfont icon_arrow_top"></i>
+          没有啦
+        </line-text>
+      </guess-like>
     </my-gome>
 
     <!-- 登录表单 -->
@@ -166,7 +173,9 @@ import SubInfoItem from "./components/subInfoItem";
 import SubMenu from "./components/subMenu";
 import SubMenuItem from "./components/subMenuItem";
 
-import LineText from "./components/lineText"
+import LineText from "./components/lineText";
+import GuessLike from "./components/guessLike";
+import GuessLikeItem from "./components/guessLikeItem";
 
 export default {
   components: {
@@ -179,7 +188,9 @@ export default {
     SubInfoItem,
     SubMenu,
     SubMenuItem,
-    LineText
+    LineText,
+    GuessLike,
+    GuessLikeItem
   },
   data() {
     return {
@@ -198,29 +209,6 @@ export default {
 <style lang="less" scoped>
 .profiles {
   display: flex;
-  flex-wrap: wrap;
-  .topbar {
-    .left {
-      width: 48px;
-      height: 96px;
-      background: red;
-      i {
-        margin-left: 24px;
-        font-size: 48px;
-        // font-weight: bold;
-      }
-    }
-    .center {
-      height: 100%;
-      font-size: 34px;
-    }
-    .right {
-      margin-right: 24px;
-      height: 100%;
-      font-size: 42px;
-      font-weight: bold;
-      color: #676262;
-    }
-  }
+  flex-direction: column;
 }
 </style>
