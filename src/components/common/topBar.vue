@@ -39,6 +39,11 @@ export default {};
   }
   .center {
     font-size: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 100px;
+    height: 100%;
   }
   .right {
     font-size: 42px;
