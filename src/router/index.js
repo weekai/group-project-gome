@@ -5,6 +5,10 @@ import Category from '@/components/category/index.vue'
 const Home = () => import('../components/home/index.vue')
 const Profiles = () => import('../components/profiles/index.vue')
 const Optimization = () => import('../components/optimization/index.vue')
+const Detail = () => import('../components/detail/index.vue')
+const Good = () => import('../components/detail/components/good.vue')
+const Description = () => import('../components/detail/components/detail.vue')
+const Evaluation = () => import('../components/detail/components/evaluation.vue')
 
 
 Vue.use(Router)
@@ -33,6 +37,53 @@ export default new Router({
         cache: true,
         title: '分类'
       }
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: Detail,
+      meta: {
+        cache: true,
+        title: '商品'
+      },
+      children:[
+        {
+          path: '/',
+          name: 'good',
+          component: Good,
+          meta: {
+            cache: true,
+            title: '商品介绍'
+          },
+        },
+        {
+          path: 'good',
+          name: 'good',
+          component: Good,
+          meta: {
+            cache: true,
+            title: '商品介绍'
+          },
+        },
+        {
+          path: 'description',
+          name: 'description',
+          component: Description,
+          meta: {
+            cache: true,
+            title: '商品详情'
+          },
+        },
+        {
+          path: 'evaluation',
+          name: 'evaluation',
+          component: Evaluation,
+          meta: {
+            cache: true,
+            title: '商品评价'
+          },
+        }
+      ]
     },
     {
       path: '/optimization',

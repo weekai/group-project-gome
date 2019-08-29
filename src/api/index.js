@@ -44,3 +44,8 @@ export function getCateListRight (cid) {
 export function getOptList() {
   return axios.get('/category/optimization')
 }
+
+// 
+export function getProfileGuessLike(){
+  return axios.get('/profiles/profilesGuessLike')
+}

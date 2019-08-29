@@ -69,10 +69,8 @@ export default {
   },
   created() {
     getOptList().then(data => {
-      //   console.log(data.result.data[0].goodsList1);
-      //   let conlist = data.result.data[0].goodsList1;
       this.optConList = data.result.data[0];
-      console.log(this.optConList);
+      // console.log(this.optConList);
     });
   }
 };

@@ -14,7 +14,7 @@
   height: 60px;
   //   background: gold;
   text-align: center;
-
+  padding: 10px 0 16px 0;
   .line-border {
     transform: translateY(50%);
     border-bottom: 1px solid #d2d2d2;

@@ -52,7 +52,7 @@ export default {};
       line-height: 32px;
       &:last-child{
         font-size: 20px;
-        transform: scale(0.8);
+        transform: scale(0.7);
       }
     }
   }

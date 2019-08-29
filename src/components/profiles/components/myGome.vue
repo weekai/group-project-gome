@@ -4,6 +4,7 @@
     <slot name="subinfo"></slot>
     <slot name="submenu"></slot>
     <slot name="linetext"></slot>
+    <slot name="guesslike"></slot>
   </div>
 </template>
 

@@ -34,12 +34,18 @@ body {
 #app {
   width: 100%;
   height: 100%;
+  overflow: auto;
 }
-// .ly-tab-item-label{
-//   color:#333;
-// }
 
-.ly-tab-item{
-color:#333;
+// 移动端隐藏滚动条
+#app::-webkit-scrollbar {
+  display: none;
+}
+#app::-webkit-scrollbar {
+  width: 0px;
+}
+
+.ly-tab-item {
+  color: #333;
 }
 </style>
