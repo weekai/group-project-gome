@@ -14,7 +14,6 @@ import { getNavShotcuts } from '@/api/index.js'
 export default{
   created(){
     getNavShotcuts().then((data)=>{
-      console.log(data.result.data)
       this.clist = data.result.data
     })
   },
