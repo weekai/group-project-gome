@@ -34,4 +34,13 @@ export function getNavShotcuts() {
 // 国美头条
 export function getHeadline() {
   return axios.get('/home/headline')
+
+ //获取列表页右侧数据
+export function getCateListRight (cid) {
+  return axios.get(`/category/cateRightList?cid=${cid}`)
+}
+
+ // 获取优选列表数据
+export function getOptList() {
+  return axios.get('/category/optimization')
 }

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import topBar from "./components/common/topBar"
+import topBar from "./components/common/topBar";
 
 export default {
   name: "App",
@@ -20,16 +20,26 @@ export default {
 html {
   overflow-x: hidden;
   overflow-y: auto;
+  height: 100%;
 }
 body {
   // 解决unable to preventDefault
-  touch-action: none; 
+  touch-action: none;
   width: 100vw;
   overflow: hidden;
   padding-left: calc(100vw - 100%);
+  height: 100%;
+  background: #f2f2f2;
 }
-#app{
+#app {
   width: 100%;
   height: 100%;
+}
+// .ly-tab-item-label{
+//   color:#333;
+// }
+
+.ly-tab-item{
+color:#333;
 }
 </style>
