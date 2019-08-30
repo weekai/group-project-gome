@@ -168,14 +168,14 @@ export default {
 };
 </script>
 
-<style lang="less" soped>
+<style lang="less" scoped>
 .isActive {
   color: #f20c59;
   border-bottom: 4px solid #f20c59;
 }
 .loginform {
-  width: 100%;
-  height: auto;
+  background: #fff;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
