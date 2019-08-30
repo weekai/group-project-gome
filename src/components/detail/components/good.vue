@@ -1,16 +1,23 @@
 <template>
   <div class="good">
-    <my-swipe :auto="4000">
-      <my-swipe-item>1</my-swipe-item>
-      <my-swipe-item>2</my-swipe-item>
-      <my-swipe-item>3</my-swipe-item>
-    </my-swipe>
+    <!-- top banner -->
+    <top-banner></top-banner>
+    <!--  -->
+    <use-good-info></use-good-info>
+    <use-good-panel></use-good-panel>
   </div>
 </template>
 
 <script>
-export default {};
+import TopBanner from "./goodTopBanner";
+import UseGoodInfo from "./useGoodInfo";
+import UseGoodPanel from "./useGoodpanel";
+
+export default {
+  components: { TopBanner, UseGoodInfo, UseGoodPanel }
+};
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+
 </style>

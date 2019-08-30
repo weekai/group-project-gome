@@ -116,7 +116,7 @@ export default {
   flex-direction: column;
 }
 .content {
-  margin-top: 90px;
+  margin-top: 100px;
   box-sizing: border-box;
   height: 100%;
   display: flex;

@@ -68,9 +68,9 @@ export default {
       content: "";
       height: 0px;
       width: 100%;
-      border: 2px solid rgba(255, 255, 255, 0.94);
+      border: 4px solid rgba(255, 255, 255, 0.94);
       position: absolute;
-      bottom: -1px;
+      bottom: -2px;
       box-sizing: border-box;
     }
     li {
@@ -87,10 +87,11 @@ export default {
         flex: 1;
         height: 100%;
         line-height: 100px;
-        font-size: 32px;
+        font-size: 28px;
+        color: #333;
         font-weight: normal;
         width: 200px;
-        border-bottom: 2px solid #dddddd;
+        border-bottom: 1px solid #999;
       }
     }
   }

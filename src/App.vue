@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -45,6 +47,15 @@ body {
   width: 0px;
 }
 
+// 懒加载
+img[lazy="loading"] {
+  width: 100px;
+  background: url("./assets/images/loading.gif") no-repeat center;
+  background-size: 100px;
+  margin: auto;
+}
+
+//
 .ly-tab-item {
   color: #333;
 }
