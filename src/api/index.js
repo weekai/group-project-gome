@@ -47,8 +47,20 @@ export function getOptList() {
   return axios.get('/category/optimization')
 }
 
+// 我的页猜你喜欢
 export function getProfileGuessLike() {
   return axios.get('/profiles/profilesGuessLike')
+}
+
+
+// 商品评价
+export function getEvaluationList() {
+  return axios.get('/detail/getEvaluationList')
+}
+
+// 商品详情
+export function getDetail() {
+  return axios.get('/detail/getDetail')
 }
 
 export function getCart(){

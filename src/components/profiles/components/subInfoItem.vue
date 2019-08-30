@@ -13,7 +13,7 @@
 export default {};
 </script>
 
-<style lang="less">
+<style lang="less" scoped >
 .sub-info-item {
   height: 100%;
   flex: 1;

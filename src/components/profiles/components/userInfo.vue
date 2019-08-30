@@ -29,7 +29,7 @@
 export default {};
 </script>
 
-<style lang="less">
+<style lang="less" scoped >
 .uinfo {
   width: 100%;
   height: 260px;
