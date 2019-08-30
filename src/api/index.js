@@ -35,8 +35,10 @@ export function getNavShotcuts() {
 export function getHeadline() {
   return axios.get('/home/headline')
 }
+
+
 //获取列表页右侧数据
-export function getCateListRight(cid) {
+export function getCateListRight (cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
 }
 
@@ -50,6 +52,7 @@ export function getProfileGuessLike() {
   return axios.get('/profiles/profilesGuessLike')
 }
 
+
 // 商品评价
 export function getEvaluationList() {
   return axios.get('/detail/getEvaluationList')
@@ -58,4 +61,8 @@ export function getEvaluationList() {
 // 商品详情
 export function getDetail() {
   return axios.get('/detail/getDetail')
+}
+
+export function getCart(){
+  return axios.get('/cart/getCart')
 }

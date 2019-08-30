@@ -9,6 +9,7 @@ const Detail = () => import('../components/detail/index.vue')
 const Good = () => import('../components/detail/components/good.vue')
 const Description = () => import('../components/detail/components/description.vue')
 const Evaluation = () => import('../components/detail/components/evaluation.vue')
+const Cart = () => import('../components/cart/index.vue')
 
 
 Vue.use(Router)
@@ -26,6 +27,15 @@ export default new Router({
       meta: {
         cache: true,
         title: '首页'
+      }
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart,
+      meta: {
+        cache: true,
+        title: '购物车'
       }
     },
     {

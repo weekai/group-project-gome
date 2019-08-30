@@ -7,12 +7,16 @@ import 'lib-flexible'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
+
 // 吕筱然
 import LyTab from 'ly-tab'
-import { Lazyload } from "mint-ui";
+
+import MintUI from "mint-ui";
+
 import 'mint-ui/lib/style.min.css'
 
 
+Vue.use(MintUI)
 Vue.use(Lazyload)
 Vue.use(LyTab)
 Vue.use(VueAwesomeSwiper)
