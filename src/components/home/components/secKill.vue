@@ -48,7 +48,7 @@
       getSecKill().then((data) => {
         this.seckill1 = data.result.data1
         this.seckill2 = data.result.data2
-        console.log(this.seckill1, this.seckill2)
+        // console.log(this.seckill1, this.seckill2)
       })
 
       this.timer = setInterval(() => {
@@ -111,16 +111,17 @@
       float: left;
       width: 49.5%;
       height: 277.76px;
-      padding: 20px;
+      padding: 20px 10px;
       box-sizing: border-box;
       margin-right:3px;
       .k-img {
         width: 148.78px;
         height: 34.68px;
+        margin-left: 10px;
       }
 
       .time {
-        margin-left: 30px;
+        margin-left: 15px;
         width: 120px;
         height: 30px;
         font-size: 24px;
@@ -134,6 +135,7 @@
 
       .killedGood {
         display: inline-block;
+        width:100%;
 
         ul {
           margin-top: 20px;
@@ -141,11 +143,11 @@
 
           li {
             float: left;
-            width: 115.32px;
+            width: 33%;
             height: 178.5px;
 
             img {
-              width: 108px;
+              width: 100px;
               height: 108px;
             }
 
@@ -169,6 +171,7 @@
     }
 
     .anotherGoods {
+      overflow:hidden;
       background: #fff;
       height: 277.76px;
       float: left;
