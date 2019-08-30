@@ -7,13 +7,19 @@ import 'lib-flexible'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
-
 import LyTab from 'ly-tab'
+
+
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css';
+
 import { Lazyload, Swipe, SwipeItem } from "mint-ui";
 
 Vue.component('mySwipe', Swipe);
 Vue.component('mySwipeItem', SwipeItem);
 
+
+Vue.use(MintUI)
 Vue.use(Lazyload)
 Vue.use(LyTab)
 Vue.use(VueAwesomeSwiper)

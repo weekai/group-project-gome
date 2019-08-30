@@ -23,11 +23,11 @@
       </ul>
     </div>
 
-    <div class="history" ref="history"  v-if="isDelete">
+    <div class="history" ref="history" v-if="isDelete">
       <ul>
         <li v-for="(item,index) in history" :key="index">{{item.content}}</li>
-        <button  @click="deleteH" >清空历史记录</button>
       </ul>
+      <button @click="deleteH">清空历史记录</button>
     </div>
 
   </div>
@@ -40,7 +40,7 @@
       <div slot="center" class="center">
         <div class="search" @click="flag=!flag">
           <i class="iconfont icon_search"></i>
-          <input readonly type="text" placeholder="电视内购会领50元券" />
+          <input readonly type="text" placeholder="搜索商品" />
         </div>
       </div>
       <div slot="right" class="right">
@@ -108,12 +108,12 @@
     created() {
       var hotSearch = ["香肠派对", "苹果手机", "空调", "冰箱", "海尔洗衣机", "华为手机", "小米电视", "美的空调"]
       this.hotList = hotSearch
-      this.history = this.getStorage()
+      // this.history = this.getStorage()
     },
     data() {
       return {
         inputVal: '',
-        isDelete:true,
+        isDelete: true,
         history: [],
         hotList: [],
         flag: false
@@ -128,12 +128,10 @@
       Seckill,
       GuessLike
     },
-    methods:{
-      deleteH(){
+    methods: {
+      deleteH() {
         this.isDelete = !this.isDelete
-        this.history = []
-        // removeStorage()
-        console.log('---------------')
+        this.removeStorage()
       },
       setStorage(list) {
         window.localStorage.setItem('history', JSON.stringify(list));
@@ -141,30 +139,52 @@
       getStorage() {
         return JSON.parse(window.localStorage.getItem('history'));
       },
-      removeStorage(){
-         window.localStorage.remoteItem('history')
+      removeStorage() {
+        window.localStorage.removeItem('history')
       },
       setHistory() {
-        this.isDelete = true;
-        var obj = {
-          content: this.inputVal,
+        this.flag = !this.flag
+        if (this.inputVal !== "") {
+          var obj = {
+            content: this.inputVal
+          }
+          this.history.push(obj)
+          this.setStorage(this.history);
+          this.inputVal = ''
         }
-        this.history.push(obj);
-        this.setStorage(this.history);
-        this.inputVal = ''
+
       },
 
       getVal() {
-          var keystr = this.$refs.input.value.trim()
-          if (this.inputVal == "") {
-            this.$refs.hot.style.display = "block"
-          }else {
-            this.$refs.hot.style.display = "none"
+        var keystr = this.$refs.input.value.trim()
+        this.inputVal = keystr
+        if (this.inputVal == "") {
+          this.$refs.hot.style.display = "block"
+          this.$refs.list.style.display = "none"
+        } else {
+          this.$refs.hot.style.display = "none"
+          this.$refs.list.style.display = "block"
+        }
+        axios(`https://m.gome.com.cn/index.php?ctl=index&act=keywordsPromptNew&keystr=${keystr}`).then((data) => {
+          this.$refs.list.innerHTML = data
+          var lis = document.querySelectorAll(".keyword ")
+          var ass = document.querySelectorAll(".keyword a")
+          var spans = document.querySelectorAll(".keyword .import")
+          for (let i = 0; i < lis.length; i++) {
+            lis[i].style.cssText = "height:50px;font-size: 14px;padding: 0 30px;border-bottom:1px solid #ddd;line-height:50px"
+            ass[i].style.color = "#333333"
           }
-          axios(`https://m.gome.com.cn/index.php?ctl=index&act=keywordsPromptNew&keystr=${keystr}`).then((data) => {
-            this.$refs.list.innerHTML = data
-          })
-      }
+          for(let i = 0; i < spans.length; i++){
+            spans[i].style.cssText = "display: inline-block; float: right;"
+          }
+        })
+      },
+
+    },
+    mounted() {
+
+
+
     }
 
   }
@@ -183,28 +203,33 @@
       box-sizing: border-box;
 
       .left {
-        width: 60px;
+        width: 7%;
+        margin-right: 24px;
+
         img {
           width: 57.6px;
           height: 57.6px;
         }
       }
+
       .center {
-        flex: 1;
         display: flex;
         position: relative;
-        font-size: 24px;
+        width: 432px;
+
         i {
           position: absolute;
           left: 24px;
-          top: 52%;
+          top: 50%;
           transform: translateY(-50%);
           font-size: 38px;
           color: #999;
         }
 
         input {
+          width: 100%;
           height: 72px;
+          font-size: 28px;
           border-radius: 36px;
           padding-left: 72px;
           box-sizing: border-box;
@@ -214,7 +239,7 @@
       }
 
       .right {
-        width: 160px;
+        width: 140px;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -256,7 +281,7 @@
         width: 50%;
 
         img {
-          margin-top:20px;
+          margin-top: 20px;
           width: 100%;
         }
       }
@@ -265,7 +290,9 @@
 
   .search_content {
     width: 100%;
+    height: 100%;
     display: relative;
+    background: #fff;
 
     .search_bar {
       height: 100%;
@@ -367,19 +394,21 @@
     }
 
     .searchList {
-      width: 100%;
-      display: absolute;
-      top: 0px;
-      left: 0px;
-      background: #FCE1E5;
+      margin-top:40px;
+
     }
 
-    .history{
+    .history {
       width: 100%;
       min-height: 100px;
-      text-align:center;
-      ul{
-        li{
+      text-align: center;
+
+      ul {
+        min-height: 0;
+        max-height: 500px;
+        overflow-y: auto;
+
+        li {
           height: 96px;
           font-size: 28px;
           line-height: 96px;
@@ -388,25 +417,26 @@
           padding-left: 50px;
           box-sizing: border-box;
         }
-        button{
-          width: 50%;
-          height: 82px;
-          font-size: 28px;
-          color: #666666;
-          background: #fff;
-          border:2px solid #ddd;
-          border-radius: 40px;
-          margin-top: 30px;
-        }
+      }
+
+      button {
+        width: 50%;
+        height: 82px;
+        font-size: 28px;
+        color: #666666;
+        background: #fff;
+        border: 2px solid #ddd;
+        border-radius: 40px;
+        margin-top: 30px;
       }
     }
   }
 
 
-  .newkey{
-    width:100%;
+  .newkey {
+    width: 100%;
     height: 106px;
-    padding:0 20px;
+    padding: 0 20px;
     color: #004444;
   }
 </style>
