@@ -50,3 +50,21 @@
 .icon_arrow_right::before{
     content: '\e618';
 }
+
+.icon_addr::before{
+    content: '\e61a';
+}
+
+
+.icon_reserve::before{
+    content: '\e688';
+}
+
+
+.icon_change_new::before{
+    content: '\e601';
+}
+
+.icon_add_heart::before{
+    content: '\e619';
+}

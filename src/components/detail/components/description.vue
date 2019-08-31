@@ -9,43 +9,25 @@
         <p>{{ info.title }}</p>
         <span>{{ info.skuPrice }}</span>
       </div>
+
       <div class="tipBg">
         <div class="tip">
           <p>{{ info.adDesc }}</p>
         </div>
       </div>
     </div>
+    <div class="tipContainer"></div>
 
     <!-- 下边选项卡切换 -->
     <div v-if="info != null">
-      <!-- 切换选项卡 -->
-      <tab
-        class="des_nav"
-        :line-width="0"
-        active-color="#000"
-        v-model="index"
-        :scroll-threshold="999"
-      >
-        <tab-item
-          class="vux-center title"
-          v-for="(item, index) in info.desNav"
-          :key="index"
-          @click="console.log(index)"
-        >{{item.name}}</tab-item>
-      </tab>
-      <!-- 切换选项卡的内容 -->
-      <div class="img-content">
-        <img v-for="(item, index) in description.desc" :key="index" v-lazy="'https://'+ item" alt />
-      </div>
+      <description-tab :cdescription="description" :cinfo="info"></description-tab>
     </div>
     <!-- 切换选项卡的内容结束 -->
-    
-    
   </div>
 </template>
 <script>
-import { Tab, TabItem, Swiper, SwiperItem } from "vux";
 import { getDetail } from "@/api/index.js";
+import DescriptionTab from "./descriptionTab";
 
 export default {
   data() {
@@ -63,34 +45,24 @@ export default {
       this.currentIndex = index;
     }
   },
-  watch: {
-    description() {
-      this.info = this.description.stock;
-      // console.log(this.info);
-    }
-  },
 
   async created() {
-    // this.description = await getDetail();
     let ret = await getDetail();
     this.description = ret.detail;
-    // console.log(this.description);
+    this.info = this.description.stock;
   },
   components: {
-    Tab,
-    TabItem,
-    Swiper,
-    SwiperItem
+    DescriptionTab
   }
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+.tipContainer {
+  height: 172px;
+}
 body {
   background: #fff;
-}
-.actived {
-  color: #333;
 }
 .description {
   .info-cont {
@@ -126,6 +98,7 @@ body {
         }
       }
     }
+
     .tipBg {
       background: #fff;
       width: 100%;
@@ -162,56 +135,5 @@ body {
       }
     }
   }
-  .des_nav {
-    position: relative;
-    margin-top: 175px;
-    height: 100px;
-    line-height: 60px;
-    background: #ffffff;
-    border: 1px solid #999;
-    border-left: none;
-    border-right: none;
-    padding: 20px 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-around;
-    color: #919599;
-    font-size: 38px;
-    span {
-      display: block;
-      text-align: center;
-      width: 250px;
-      font-size: 28px;
-      border-right: 0.5px solid #000;
-      &:nth-child(3) {
-        border-right: 0 none;
-      }
-    }
-  }
-  .vux-tab-container,
-  .vux-tab {
-    height: 100%;
-    .vux-tab-item {
-      height: 19200px !important;
-      line-height: 100px;
-      font-size: 28px;
-      &:nth-child(2) {
-        border-left: 1px solid #333 !important;
-        border-right: 1px solid #333 !important;
-      }
-    }
-  }
-}
-.img-content {
-  width: 100%;
-  padding: 20px 10px 0;
-  box-sizing: border-box;
-  img {
-    width: 100%;
-  }
-}
-.vux-slider {
-  height: 100% !important;
-  overflow: scroll !important;
 }
 </style>

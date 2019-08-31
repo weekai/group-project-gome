@@ -73,22 +73,23 @@ export default {};
       }
     }
   }
-  .center{
-      color: #F20C59;
-      line-height: 34px;
+
+  .center {
+    color: #f20c59;
+    line-height: 34px;
   }
 
-    .bottom{
-        font-size: 48px;
-        font-weight: bold;
-        color: #F20C59;
-        margin-top: 20px;
-        p{
-            &::before{
-                content: "￥";
-                font-size: 34px;
-            }
-        }
+  .bottom {
+    font-size: 48px;
+    font-weight: bold;
+    color: #f20c59;
+    margin-top: 20px;
+    p {
+      &::before {
+        content: "￥";
+        font-size: 34px;
+      }
     }
+  }
 }
 </style>

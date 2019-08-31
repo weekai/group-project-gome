@@ -15,8 +15,9 @@
       </div>
     </top-bar>
 
-    <router-view></router-view>
-
+    <div class="good-content">
+      <router-view />
+    </div>
 
   </div>
 </template>
@@ -40,11 +41,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-body{
-  background: #f2f2f2;
+body {
+  background: #f2f2f2 !important;
 }
+
 .top-center {
-  height: 100%;
+  height: 100% !important;
   span {
     display: inline-block;
     height: 94%;

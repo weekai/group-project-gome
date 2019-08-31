@@ -3,7 +3,7 @@
     <div class="top">
       <slot name="tag"></slot>
       <slot name="title"></slot>
-      <i class="iconfont icon_arrow_right rIcon"></i>
+      <slot name="arrow"></slot>
     </div>
     <slot class="bottom" name="service">
       <slot name="tag1"></slot>
@@ -23,8 +23,9 @@
   display: flex;
   flex-direction: column;
   .top {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: nowrap;
     [slot="tag"] {
       margin-right: 24px;
       color: #a2a4a6;
@@ -33,7 +34,9 @@
     [slot="title"] {
       line-height: 34px;
     }
-    .rIcon {
+    [slot="arrow"] {
+      display: block;
+      float: right;
       font-size: 30px;
       color: #aaa;
     }
