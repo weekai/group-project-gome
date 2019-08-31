@@ -14,7 +14,10 @@
         <pop-up v-show="ispop"></pop-up>
       </div>
     </top-bar>
+
     <router-view></router-view>
+
+
   </div>
 </template>
 
@@ -37,6 +40,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+body{
+  background: #f2f2f2;
+}
 .top-center {
   height: 100%;
   span {

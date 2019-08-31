@@ -7,6 +7,7 @@ axios.interceptors.response.use(function (response) {
   return Promise.reject(error)
 })
 
+
 // 轮播广告图
 export function getBanners() {
   return axios.get('/home/getBanners')
@@ -36,6 +37,11 @@ export function getHeadline() {
   return axios.get('/home/headline')
 }
 
+
+export function gitGoodList () {
+  return axios.get(`/category/goodList`)
+}
+ 
 //获取列表页右侧数据
 export function getCateListRight (cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
@@ -46,8 +52,20 @@ export function getOptList() {
   return axios.get('/category/optimization')
 }
 
+// 我的页猜你喜欢
 export function getProfileGuessLike() {
   return axios.get('/profiles/profilesGuessLike')
+}
+
+
+// 商品评价
+export function getEvaluationList() {
+  return axios.get('/detail/getEvaluationList')
+}
+
+// 商品详情
+export function getDetail() {
+  return axios.get('/detail/getDetail')
 }
 
 export function getCart(){

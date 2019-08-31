@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .item-wrap {
   display: flex;
   padding: 0 5px 0 5px;
