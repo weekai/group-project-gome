@@ -48,14 +48,20 @@ import BScroll from "@better-scroll/core";
 export default {
   data() {
     return {
-      List: []
+      list1: [],
+       list2: [],
     };
   },
   mounted() {},
   created() {
-    gitGoodList().then(data => {
-      console.log(data.result);
-      this.List = data.result;
+    gitGoodList101().then(data => {
+      this.list1 = data.result;
+      this.$nextTick(() => {
+        new BScroll(".content");
+      });
+    });
+    gitGoodList102().then(data => {
+      this.list2 = data.result;
       this.$nextTick(() => {
         new BScroll(".content");
       });
