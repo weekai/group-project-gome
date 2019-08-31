@@ -7,6 +7,7 @@
         :key="index"
         :class="currentIndex == index? 'on':'' "
         @click="changeCate(index)"
+        :cid="item.id"
       >{{item.catalog}}</li>
     </ul>
   </div>
@@ -26,8 +27,9 @@ export default {
   },
   methods: {
     changeCate(index) {
-      var cid = index + 101;
       this.currentIndex = index;
+      // console.log(event.target.getAttribute('cid'))
+      let cid = event.target.getAttribute('cid');
       bus.$emit("getCid", cid);
     }
   },
