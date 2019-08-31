@@ -27,15 +27,16 @@ export default {
     };
   },
   created() {
-    window.onload = function() {
-      getCateListRight(101).then(ret => {
+    // window.onload = function() {
+      getCateListRight(101).then((ret) => {
+        console.log(ret)
         this.bagList = ret;
         new BScroll(".wrapper0", {
           click: true,
           bounce: false
         });
       });
-    };
+    // };
 
     bus.$on("getCid", cid => {
       getCateListRight(cid).then(ret => {

@@ -1,10 +1,10 @@
 <template>
   <div class="nav">
-    <a class="afirst"  @click="show()" >综合</a>
+    <a class="afirst" @click="isshow = !isshow">综合</a>
     <a class="atwo" href>价格</a>
     <a href>销量</a>
     <a href>筛选</a>
-    <!-- <div class="pulldown" ref="pulldown">
+    <div class="pulldown" ref="pulldown" v-show="isshow">
       <ul>
         <li>
           <span>综合</span>
@@ -13,21 +13,23 @@
           <span>评论从高到低</span>
         </li>
       </ul>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
 export default {
-    methods(){
-       
-    }
+  data() {
+    return {
+      isshow: false
+    };
+  }
 };
 </script>
 <style lang="less" scoped>
 .nav {
   width: 100%;
   height: 100px;
-  margin-top: 80px;
+  // margin-top: 80px;
   position: relative;
   background: #fff;
   display: flex;
@@ -42,19 +44,19 @@ export default {
     left: 0;
     width: 100%;
     height: 200px;
+    background: #fff;
     ul {
       // width: 750px;
       height: 100%;
       li {
         width: 100%;
         height: 100px;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid rgb(136, 136, 136);
         line-height: 100px;
         font-size: 30px;
-        span{
-            margin-left: 50px
+        span {
+          margin-left: 50px;
         }
-   
       }
     }
   }
