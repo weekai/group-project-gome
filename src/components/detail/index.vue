@@ -14,9 +14,10 @@
         <pop-up v-show="ispop"></pop-up>
       </div>
     </top-bar>
-    <router-view>
-      
-    </router-view>
+
+    <router-view></router-view>
+
+
   </div>
 </template>
 
@@ -32,7 +33,8 @@ export default {
   },
   components: {
     TopBar,
-    PopUp
+    PopUp,
+	Add
   }
 };
 </script>

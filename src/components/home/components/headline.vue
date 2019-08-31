@@ -49,7 +49,7 @@
     display: flex;
     background: #FFFFFF;
     height: 102px;
-    width: 93%;
+    width: 92.6%;
     margin: 0 auto;
     overflow: hidden;
     border-radius:20px 20px 0 0;

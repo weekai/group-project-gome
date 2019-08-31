@@ -12,7 +12,6 @@
           ￥{{item.price}}
           <a href="#">看相似</a>
         </em>
-        <!-- <em class="gprice">{{item.gprice}}</em> -->
       </div>
     </div>
     <div class="empty"></div>
@@ -24,8 +23,6 @@
     created() {
       getGuessLike().then((data) => {
         this.likeList = data.result.data
-        // console.log(this.likeList)
-
       })
     },
     data() {
@@ -42,6 +39,7 @@
 
     .t-img {
       width: 100%;
+      margin-top: 20px;
     }
 
     .likeGood {
@@ -52,11 +50,11 @@
       .likes {
         overflow: hidden;
         display: inline-block;
-        margin-bottom: 25px;
-        width: 49.3%;
-        min-height: 570px;
+        margin-bottom: 15px;
+        width: 49.5%;
+        // min-height: 570px;
         background: #fff;
-        border-radius: 30px;
+        border-radius: 20px;
         float: left;
 
         img {
@@ -92,12 +90,14 @@
         }
 
         em {
+          display: inline-block;
           display: flex;
           justify-content: space-between;
           padding: 20px;
           box-sizing: border-box;
           width: 100%;
           height: 42px;
+          margin-bottom:35px;
           font-size: 32px;
           color: #f20c59;
 

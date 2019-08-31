@@ -101,7 +101,7 @@
 
 <style lang="less" scoped>
   .secKill {
-    width: 93%;
+    width: 93.3%;
     height: 545px;
     margin-bottom: 120px;
     margin: 3px auto;
@@ -186,6 +186,7 @@
         height: 40px;
         line-height: 40px;
         padding:0 30px;
+        // border-right: 3px solid #fff;
       }
       p:nth-child(2) {
         margin-top: 5px;
