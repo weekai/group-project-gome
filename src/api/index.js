@@ -41,7 +41,7 @@ export function getHeadline() {
 export function gitGoodList () {
   return axios.get(`/category/goodList`)
 }
- 
+
 //获取列表页右侧数据
 export function getCateListRight (cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
@@ -75,3 +75,10 @@ export function getCart(){
 export function getFloor(){
   return axios.get('/home/getFloor')
 }
+
+// export function delectCart(cartList){
+//  return axios.post('/cart', {
+//       cart: cartList
+//     });
+// }
+

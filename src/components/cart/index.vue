@@ -3,13 +3,10 @@
   <div class="app-cont">
     <!-- 头部 -->
     <Top></Top>
-
-
     <div class="goods-list" v-if="flag">
 
       <!-- GOME -->
       <div class="gome">
-        <span @click="selectMego" :class="{'notActiveMego':!isMego}"></span>
         <div class="name-box">
           <img src="//gfs11.gomein.net.cn/T18GDvB_hg1RCvBVdK.png" />
           <h2>美国自营</h2>
@@ -20,21 +17,22 @@
             <h2>运费说明</h2>
           </a>
           <em class="card" @click="sheetVisible=!sheetVisible">领劵</em>
-         <!-- <div class="mt-actionsheet"  >
-                 <p>优惠券</p>
-                  <img src="@/assets/images/coupon.png"/>
-                  <p>暂无可领取优惠券</p>
-          </div> -->
-
         </div>
+      </div>
+      <div class="mt-actionsheet" v-show="sheetVisible">
 
+        <div class="getCard">领券</div>
+        <i @click="sheetVisible=!sheetVisible">x</i>
+        <p class="title">优惠券</p>
+        <img src="@/assets/images/coupon.png" />
+        <p class="content">暂无可领取优惠券</p>
       </div>
 
       <!-- 商品列表项区域 -->
       <div class="mui-card" v-for="(item,index) in cartList" :key="index">
         <div class="mui-card-content">
           <div class="mui-card-content-inner">
-            <span class="select" @click="selectOne;item.isSelect=!item.isSelect" :class="{'cart-notActive':!item.isSelect}"></span>
+            <span class="select" @click="selectOne(index)" :class="{'cart-notActive':!item.isSelect}"></span>
             <img :src="item.img" />
             <div class="info">
               <p>{{item.msg}}</p>
@@ -60,7 +58,7 @@
               </span>
               <span>|</span>
               <span>
-                <a href="#">删除</a>
+                <a href="#" @click="delect(index)">删除</a>
               </span>
             </div>
           </div>
@@ -75,13 +73,12 @@
         </div>
         <div class="total">
           <span>合计：</span>
-          <span class="money">￥100</span>
+          <span class="money">￥{{total()}}</span>
         </div>
         <div class="payit">
-          去结算（）
+          去结算（{{totalNumber()}}）
         </div>
       </div>
-
     </div>
 
     <div class="empty" v-else>
@@ -89,11 +86,7 @@
       <p> 购物车还是空的，快去挑选商品吧</p>
       <a href="#/home">去逛逛</a>
     </div>
-
-
     <GuessLike></GuessLike>
-
-
   </div>
 </template>
 <script>
@@ -101,14 +94,12 @@
     getGuessLike,
     getCart
   } from "@/api/index.js";
-
   import Top from './components/top.vue'
   import GuessLike from './components/guessLike.vue'
   export default {
     components: {
       Top,
       GuessLike
-
     },
     created() {
       getGuessLike().then(data => {
@@ -130,14 +121,16 @@
         cartList: [],
         flag: false,
         isAll: false,
-        isMego:false,
         isShow: false,
+        sheetVisible: false
       };
     },
     methods: {
-      selectOne() {
+      selectOne(index) {
+        console.log(this.cartList[index])
+        this.cartList[index].isSelect = !this.cartList[index].isSelect
+        console.log(this.cartList[index].isSelect)
         this.isAll = this.cartList.every((item) => {
-          console.log(item.isSelect)
           return item.isSelect == true;
         })
       },
@@ -152,16 +145,52 @@
       },
       add(index) {
         var inp = document.querySelectorAll("input");
-          this.cartList[index].count += 1
+        this.cartList[index].count += 1
       },
       sub(index) {
         var inp = document.querySelectorAll("input");
-        if(this.cartList[index].count>1){
+        if (this.cartList[index].count > 1) {
           this.cartList[index].count -= 1
+        }
+      },
+      delect(ind) {
+        this.cartList.splice(ind, 1)
+        if (this.cartList.length == 0) {
+          this.flag = !this.flag
+        }
+        console.log(this.cartList)
+
+// 
+//         delectCart(this.cartList)
+//           .then(function(response) {
+//             console.log(response);
+//           })
+//           .catch(function(error) {
+//             console.log(error);
+//           });
+      },
+      total() {
+        return this.cartList.reduce((total, item) => {
+          if (item.isSelect) {
+            total += parseFloat((item.price * item.count))
+            return total;
+          } else {
+            return total;
           }
+        }, 0)
+      },
+      totalNumber() {
+        return this.cartList.reduce((number, item) => {
+          if (item.isSelect) {
+            number += item.count
+            return number;
+          } else {
+            return number;
+          }
+        }, 0)
       }
     }
-  };
+  }
 </script>
 <style lang="less" scoped>
   .app-cont {
@@ -405,10 +434,62 @@
             font-weight: 700;
             color: #f20c59;
           }
-          .mt-actionsheet{
-            width: 100%;
-            height: 300px;
-          }
+
+
+        }
+      }
+
+      .mt-actionsheet {
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1000px;
+        background: #fff;
+        z-index: 1000;
+
+        i {
+          display: block;
+          height: 80px;
+          text-align: right;
+          padding-right: 35px;
+          box-sizing: border-box;
+          line-height: 80px;
+          font-size: 40px;
+        }
+
+        .getCard {
+          width: 100%;
+          height: 80px;
+          background: #fb1e6a;
+          color: #fff;
+          font-size: 32px;
+          text-align: center;
+          line-height: 80px;
+          letter-spacing: 10px;
+        }
+
+        p.title {
+          margin-top: 70px;
+          height: 32px;
+          font-size: 32px;
+          text-align: center;
+          line-height: 32px;
+        }
+
+        p.content {
+          margin-top: 30px;
+          height: 26px;
+          font-size: 26px;
+          text-align: center;
+          line-height: 26px;
+        }
+
+        img {
+          width: 200px;
+          height: 200px;
+          margin: 20px 0;
         }
       }
 
