@@ -43,9 +43,14 @@
           <input readonly type="text" placeholder="搜索商品" />
         </div>
       </div>
+
       <div slot="right" class="right">
-        <img src="../../assets/images/cart.png" alt />
-        <p>登录</p>
+        <router-link  to="/cart" slot="left">
+            <img src="../../assets/images/cart.png" alt />
+        </router-link>
+        <router-link tag="p" to="" slot="left">
+          登录
+        </router-link>
       </div>
     </top-bar>
 
