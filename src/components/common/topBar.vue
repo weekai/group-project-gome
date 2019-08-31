@@ -29,7 +29,7 @@ export default {};
   box-sizing: border-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   position: sticky;
-  top: 0;
+  top: -1px;
   left: 0;
   z-index: 9999;
   .left {

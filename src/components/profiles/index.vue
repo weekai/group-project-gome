@@ -1,7 +1,17 @@
 <template>
   <div class="profileBg">
     <div class="profiles">
-      <top-bar v-if="!isLogin">
+      <top-bar v-if="isLogin">
+        <router-link tag="div" to="/home" slot="left">
+          <i class="iconfont icon_arrow_left"></i>
+        </router-link>
+        <div slot="center" class="center" v-if="isLogin">我的国美</div>
+        <div slot="right" class="right" v-if="isLogin" @click="ispop = !ispop">
+          <i class="iconfont icon_more"></i>
+          <pop-up v-show="ispop"></pop-up>
+        </div>
+      </top-bar>
+       <top-bar v-else>
         <router-link tag="div" to="/home" slot="left">
           <i class="iconfont icon_arrow_left"></i>
         </router-link>

@@ -1,8 +1,7 @@
 <template>
-  <div class="r-content wrapper1">
+  <div class="r-content wrapper1 wrapper0" v-if="bagList != []">
     <ul>
       <li class="bli" v-for="(item , index) in  bagList " :key="index">
-        <!-- <h3>{{bagList[index].data[index].title}}</h3> -->
         <h3>{{item.title}}</h3>
         <ul class="eveul">
           <li class="eveli" v-for="(i,index) in item.data" :key="index">
@@ -25,32 +24,28 @@ export default {
     return {
       isOn: 0,
       bagList: []
-      // minList: []
     };
   },
-  mounted() {
-    bus.$on("getCid", cid => {
-      getCateListRight(cid).then(data => {
-        // console.log(cid)
-        // console.log(data);
-        this.bagList = data;
-        // console.log(this.bagList)
-        this.$nextTick(() => {
-          new BScroll(".wrapper1");
+  created() {
+    window.onload = function() {
+      getCateListRight(101).then(ret => {
+        this.bagList = ret;
+        new BScroll(".wrapper0", {
+          click: true,
+          bounce: false
         });
       });
-    });
-  },
-  methods: {},
-  created() {
-    getCateListRight(101).then(data => {
-      // console.log(data);
-      this.bagList = data;
-      this.$nextTick(() => {
-        new BScroll(".wrapper1", {
-          click: true,
-          bounce: false,
-          bounceTime: 300
+    };
+
+    bus.$on("getCid", cid => {
+      getCateListRight(cid).then(ret => {
+        this.bagList = ret;
+        // console.log(this.bagList)
+        this.$nextTick(() => {
+          new BScroll(".wrapper1", {
+            click: true,
+            bounce: false
+          });
         });
       });
     });
