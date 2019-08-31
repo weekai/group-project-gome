@@ -18,6 +18,7 @@
     <div class="good-content">
       <router-view />
     </div>
+
   </div>
 </template>
 
@@ -33,7 +34,8 @@ export default {
   },
   components: {
     TopBar,
-    PopUp
+    PopUp,
+	Add
   }
 };
 </script>

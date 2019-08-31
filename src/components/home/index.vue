@@ -86,7 +86,7 @@
     </div>
 
     <!-- 特定楼层 -->
-    <div></div>
+    <Floor></Floor>
     <!-- 猜你喜欢 -->
     <guess-like></guess-like>
 
@@ -103,6 +103,7 @@
   import Seckill from "./components/secKill.vue"
   import GuessLike from "./components/guessLike.vue"
   import TabBar from "../common/tabBar"
+  import Floor from "./components/floor.vue"
 
   export default {
     created() {
@@ -126,7 +127,9 @@
       Category,
       Headline,
       Seckill,
-      GuessLike
+      GuessLike,
+      Floor
+
     },
     methods: {
       deleteH() {
@@ -171,7 +174,7 @@
           var ass = document.querySelectorAll(".keyword a")
           var spans = document.querySelectorAll(".keyword .import")
           for (let i = 0; i < lis.length; i++) {
-            lis[i].style.cssText = "height:50px;font-size: 14px;padding: 0 30px;border-bottom:1px solid #ddd;line-height:50px"
+            lis[i].style.cssText = "height:104px;font-size: 28px;padding: 0 30px;border-bottom:1px solid #ddd;line-height:104px"
             ass[i].style.color = "#333333"
           }
           for(let i = 0; i < spans.length; i++){
@@ -182,11 +185,7 @@
 
     },
     mounted() {
-
-
-
     }
-
   }
 </script>
 <style lang="less" scoped>
