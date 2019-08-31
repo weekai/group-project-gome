@@ -30,7 +30,8 @@ export default {
   },
   components: {
     TopBar,
-    PopUp
+    PopUp,
+	Add
   }
 };
 </script>

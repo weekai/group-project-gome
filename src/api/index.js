@@ -36,7 +36,6 @@ export function getHeadline() {
   return axios.get('/home/headline')
 }
 
-
 //获取列表页右侧数据
 export function getCateListRight (cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
@@ -53,4 +52,8 @@ export function getProfileGuessLike() {
 
 export function getCart(){
   return axios.get('/cart/getCart')
+}
+
+export function getFloor(){
+  return axios.get('/home/getFloor')
 }
