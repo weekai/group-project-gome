@@ -54,7 +54,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .r-content {
-  height: 100%;
+  height: auto;
   width: 100%;
   ul {
     height: auto;

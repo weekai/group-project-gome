@@ -2,7 +2,7 @@
   <div class="cata">
     <!-- 搜索框 -->
     <!-- <search></search> -->
-    <top-bar class="topBar">
+    <top-bar>
       <router-link tag="div" to="/home" slot="left">
         <i class="iconfont icon_arrow_left"></i>
       </router-link>
@@ -54,7 +54,7 @@ export default {
   display: flex;
   position: fixed;
   left: 0;
-  top: 0;
+  top: -2px;
   z-index: 1000;
   .left {
     width: 60px;
@@ -64,10 +64,13 @@ export default {
     }
   }
   .center {
-    // background: red;
+    background: #fff;
     position: relative;
     font-size: 24px;
     width: 560px;
+    .search {
+      background: r#fff;
+    }
     i {
       position: absolute;
       right: 24px;
@@ -116,7 +119,7 @@ export default {
   flex-direction: column;
 }
 .content {
-  margin-top: 100px;
+  // margin-top: 90px;
   box-sizing: border-box;
   height: 100%;
   display: flex;

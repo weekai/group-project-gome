@@ -17,7 +17,6 @@ import 'mint-ui/lib/style.min.css'
 
 
 Vue.use(MintUI)
-Vue.use(Lazyload)
 Vue.use(LyTab)
 Vue.use(VueAwesomeSwiper)
 

@@ -37,7 +37,6 @@
 //  导入组件---topBar
 import TopBar from "../common/topBar";
 
-import OptTop from "./components/optTop";
 // 导入组件---导航
 import OptNav from "./components/optNav";
 // 导入组件---内容列表
@@ -66,7 +65,6 @@ export default {
   components: {
     TopBar,
     PopUp,
-    OptTop,
     OptNav,
     OptConList,
     OptLookOver,
@@ -79,6 +77,9 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.topbar{
+  top: -2px;
+}
 .optimization {
   background: #7f0305;
   // height: 3000px;

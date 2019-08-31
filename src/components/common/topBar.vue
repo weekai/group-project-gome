@@ -28,13 +28,15 @@ export default {};
   padding: 0 30px;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   .left {
-    // background: red;
     font-size: 42px;
     i {
       margin-left: 24px;
       font-size: 48px;
-      // font-weight: bold;
     }
   }
   .center {
