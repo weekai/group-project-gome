@@ -11,28 +11,25 @@
         <img src="@/assets/images/addr.png" alt />
       </div>
       <div class="right">
-        编辑&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <i class="iconfont icon_more" @click="ispop=!ispop"></i>
         <Popmenu v-show="ispop"></Popmenu>
       </div>
-
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
   import Popmenu from "./popMenu.vue";
   export default {
-    components:{
-        Popmenu
+    components: {
+      Popmenu
     },
-    data(){
-      return{
-        popupVisible:false,
-        ispop:false
+    data() {
+      return {
+        popupVisible: false,
+        ispop: false
       }
     }
-
   }
 </script>
 
@@ -78,11 +75,10 @@
 
       .right {
         display: inline-block;
-        font-size: 32px;
-        position:relative;
+        padding-right: 30px;
 
         .icon_more::before {
-          font-size: 32px;
+          font-size: 40px;
           content: '\E634';
         }
       }
