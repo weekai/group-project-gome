@@ -6,7 +6,7 @@
         <h3>{{item.title}}</h3>
         <ul class="eveul">
           <li class="eveli" v-for="(i,index) in item.data" :key="index">
-            <a :href="i.hf">
+            <a href="#/productlist">
               <img :src="i.img" />
               <span>{{i.name}}</span>
             </a>
@@ -31,8 +31,13 @@ export default {
   mounted() {
     bus.$on("getCid", cid => {
       getCateListRight(cid).then(data => {
-        console.log(data);
+        // console.log(cid)
+        // console.log(data);
         this.bagList = data;
+        // console.log(this.bagList)
+        this.$nextTick(() => {
+          new BScroll(".wrapper1");
+        });
       });
     });
   },
@@ -75,18 +80,18 @@ export default {
       }
       .eveli {
         width: 156px;
-        height: 214px;
+        // height: 214px;
         padding: 10px;
         margin: 10px;
         background: #f9f9f9;
         img {
           width: 156px;
-          height: 156px;
+          // height: 156px;
         }
         span {
           display: block;
           width: 100%;
-          height: 50px;
+          // height: 50px;
           text-align: center;
           line-height: 60px;
           color: #666;

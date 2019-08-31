@@ -5,7 +5,7 @@ import Category from '@/components/category/index.vue'
 const Home = () => import('../components/home/index.vue')
 const Profiles = () => import('../components/profiles/index.vue')
 const Optimization = () => import('../components/optimization/index.vue')
-
+const ProductList = () => import('../components/productList/index.vue')
 
 Vue.use(Router)
 
@@ -25,6 +25,11 @@ export default new Router({
       path: '/category',
       name: 'Category',
       component: Category
+    },
+    {
+      path: '/productlist',
+      name: 'productlist',
+      component: ProductList,
     },
     {
       path: '/optimization',

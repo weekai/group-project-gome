@@ -15,14 +15,19 @@ export function getGuessLike () {
     return axios.get('/home/getGuessLike')
 
   }
-//获取列表页左侧数据
+//获取分类页左侧数据
 export function getCateList () {
     return axios.get(`/category/cateLeftList`)
  }
 
- //获取列表页右侧数据
+ //获取分类页右侧数据
 export function getCateListRight (cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
+}
+
+//获取列表页数据
+export function gitGoodList () {
+  return axios.get(`/category/goodList`)
 }
  
 export function getNavShotcuts () {
