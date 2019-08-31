@@ -7,6 +7,7 @@ axios.interceptors.response.use(function (response) {
   return Promise.reject(error)
 })
 
+
 // 轮播广告图
 export function getBanners() {
   return axios.get('/home/getBanners')
@@ -37,6 +38,10 @@ export function getHeadline() {
 }
 
 
+export function gitGoodList () {
+  return axios.get(`/category/goodList`)
+}
+ 
 //获取列表页右侧数据
 export function getCateListRight (cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
@@ -65,4 +70,8 @@ export function getDetail() {
 
 export function getCart(){
   return axios.get('/cart/getCart')
+}
+
+export function getFloor(){
+  return axios.get('/home/getFloor')
 }

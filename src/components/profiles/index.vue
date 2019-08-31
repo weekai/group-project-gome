@@ -210,12 +210,16 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.profileBg{
+#app{
+  padding-top: 0;
+}
+.profileBg {
   height: 100%;
   background: #fff;
+  box-sizing: border-box;
+ 
 }
 .profiles {
-  height: auto;
   display: flex;
   flex-direction: column;
 }
