@@ -31,3 +31,22 @@
     content: '\e611';
 }
 
+.icon_more::before{
+    content: '\e634';
+}
+
+.icon_arrow_top::before{
+    content: '\e623';
+}
+
+.icon_star::before{
+    content: '\e600';
+}
+
+.icon_share::before{
+    content: '\e62b';
+}
+
+.icon_arrow_right::before{
+    content: '\e618';
+}

@@ -18,6 +18,7 @@
           id="username"
           placeholder="手机号/邮箱/用户名/门店会员卡号"
           autocomplete="off"
+          v-model="username"
         />
         <div class="close">
           <img src="../images/close.png" alt />
@@ -32,6 +33,7 @@
           maxlength="20"
           placeholder="请输入密码"
           autocomplete="off"
+          v-model="pwd"
         />
         <div class="close">
           <img src="../images/close.png" alt />
@@ -49,7 +51,7 @@
           <a href>找回密码</a>
         </div>
       </div>
-      <div class="lg_btn">
+      <div class="lg_btn" @click="login">
         <a href="javascript:void(0)">登录</a>
       </div>
     </div>
@@ -118,12 +120,16 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       normalLogin: true,
       isSee: true,
-      isClose: false
+      isClose: false,
+      username: "",
+      pwd: "",
+      islogin: false
     };
   },
   methods: {
@@ -134,20 +140,42 @@ export default {
       } else {
         this.$refs.inpwd.setAttribute("type", "password");
       }
+    },
+    login() {
+      axios({
+        method: "post",
+        url: "http://localhost:3000/api/profiles/login",
+        data: {
+          username: this.username,
+          pwd: this.pwd
+        },
+        withCredentials: "include",
+        timeout: 1000
+      }).then(res => {
+        console.log(res);
+        if (res.code == 0 && res.success == true) {
+          this.islogin = true;
+          this.$store.commit("changeIsLoginStatus", this.islogin);
+          this.$router.push("/home");
+        } else {
+          this.islogin = false;
+          this.$store.commit("changeIsLoginStatus", this.islogin);
+        }
+      });
     }
   },
   components: {}
 };
 </script>
 
-<style lang="less" soped>
+<style lang="less" scoped>
 .isActive {
   color: #f20c59;
   border-bottom: 4px solid #f20c59;
 }
 .loginform {
-  width: 100%;
-  height: auto;
+  background: #fff;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -47,7 +47,11 @@ export default {
       // console.log(data);
       this.bagList = data;
       this.$nextTick(() => {
-        new BScroll(".wrapper1");
+        new BScroll(".wrapper1", {
+          click: true,
+          bounce: false,
+          bounceTime: 300
+        });
       });
     });
   }
@@ -60,10 +64,15 @@ export default {
   ul {
     height: auto;
     background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-right: 10px;
     .bli {
       width: 100%;
       height: auto;
       // background: #f8f8f8;
+
       h3 {
         line-height: 40px;
         color: #999;
@@ -73,20 +82,19 @@ export default {
         width: 100%;
         height: auto;
         display: flex;
-        flex-wrap: wrap;
-        align-content: space-around;
-
-        align-items: stretch;
+        justify-content: flex-start;
       }
       .eveli {
         width: 156px;
         // height: 214px;
         padding: 10px;
-        margin: 10px;
-        background: #f9f9f9;
+        margin: 10px 0 10px 15px;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         img {
           width: 156px;
-          // height: 156px;
         }
         span {
           display: block;

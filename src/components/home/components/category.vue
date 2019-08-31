@@ -14,7 +14,6 @@ import { getNavShotcuts } from '@/api/index.js'
 export default{
   created(){
     getNavShotcuts().then((data)=>{
-      console.log(data.result.data)
       this.clist = data.result.data
     })
   },
@@ -41,7 +40,7 @@ export default{
                   width: 156px;
               }
               p{
-                margin-top: 10px;
+                margin-top: 12px;
                 font-size: 24px;
               }
           }
