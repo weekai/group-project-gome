@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" ref="content">
     <ul class="contentul">
       <li class="contentli" v-for="(item,index) in List" :key="index">
         <a href="#/detail">
@@ -48,24 +48,31 @@ import BScroll from "@better-scroll/core";
 export default {
   data() {
     return {
-      list1: [],
-       list2: [],
+    List: [],
+    scroll:null
+      //  list2: [],
     };
   },
-  mounted() {},
+  // mounted() {},
   created() {
-    gitGoodList101().then(data => {
-      this.list1 = data.result;
+    gitGoodList().then(data => {
+      console.log(data)
+      this.List = data.result[1].data;
       this.$nextTick(() => {
-        new BScroll(".content");
+         this.scroll = new BScroll(".content");
       });
     });
-    gitGoodList102().then(data => {
-      this.list2 = data.result;
-      this.$nextTick(() => {
-        new BScroll(".content");
-      });
-    });
+    // gitGoodList102().then(data => {
+    //   this.list2 = data.result;
+    //   this.$nextTick(() => {
+    //     new BScroll(".content");
+    //   });
+    // });
+  },
+  methods:{
+    scrollTo(){
+      this.scroll.scrollTo(0,0)
+    }
   }
 };
 </script>
@@ -75,6 +82,7 @@ export default {
 .content {
   width: @w;
   height: @h;
+  background: #fff;
   .contentul {
     width: @w;
     height: auto;

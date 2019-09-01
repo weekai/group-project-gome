@@ -1,6 +1,6 @@
 <template>
   <div class="ca">
-    <a href="#/category">
+    <a href="#/cart">
       <img src="@/assets/images/cart.png" />
     </a>
   </div>
