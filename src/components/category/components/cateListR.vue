@@ -41,7 +41,7 @@ export default {
     bus.$on("getCid", cid => {
       getCateListRight(cid).then(ret => {
         this.bagList = ret;
-        // console.log(this.bagList)
+        console.log(this.bagList)
         this.$nextTick(() => {
           new BScroll(".wrapper1", {
             click: true,
