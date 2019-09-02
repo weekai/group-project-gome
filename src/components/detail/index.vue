@@ -1,9 +1,9 @@
 <template>
   <div>
     <top-bar>
-      <router-link tag="div" to="/home" slot="left">
+      <div  @click="$router.go(-1)" slot="left">
         <i class="iconfont icon_arrow_left"></i>
-      </router-link>
+      </div>
       <div slot="center" class="top-center">
         <router-link tag="span" to="/detail/good">商品</router-link>
         <router-link tag="span" to="/detail/description">详情</router-link>

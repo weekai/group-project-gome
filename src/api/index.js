@@ -38,12 +38,12 @@ export function getHeadline() {
 }
 
 
-export function gitGoodList () {
+export function gitGoodList() {
   return axios.get(`/category/goodList`)
 }
 
 //获取列表页右侧数据
-export function getCateListRight (cid) {
+export function getCateListRight(cid) {
   return axios.get(`/category/cateRightList?cid=${cid}`)
 }
 
@@ -68,17 +68,24 @@ export function getDetail() {
   return axios.get('/detail/getDetail')
 }
 
-export function getCart(){
+// 加入购物车
+export function addCart(obj) {
+  return axios.get('/detail/addCart', {
+    params: JSON.stringify(obj)
+  })
+}
+
+export function getCart() {
   return axios.get('/cart/getCart')
 }
 
-export function getFloor(){
+export function getFloor() {
   return axios.get('/home/getFloor')
 }
 
-// export function delectCart(cartList){
-//  return axios.post('/cart', {
-//       cart: cartList
-//     });
-// }
+export function delectCart(cartList) {
+  return axios.post('/cart', {
+    cart: cartList
+  });
+}
 

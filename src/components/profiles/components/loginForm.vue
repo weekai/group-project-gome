@@ -152,14 +152,18 @@ export default {
         withCredentials: "include",
         timeout: 1000
       }).then(res => {
-        console.log(res);
+        // console.log(res);
         if (res.code == 0 && res.success == true) {
           this.islogin = true;
-          this.$store.commit("changeIsLoginStatus", this.islogin);
+          // this.$store.commit("changeIsLoginStatus", this.islogin);
+          localStorage.setItem("isLogin", "true");
+          this.$emit("changState", "true");
           this.$router.push("/home");
         } else {
           this.islogin = false;
-          this.$store.commit("changeIsLoginStatus", this.islogin);
+          // this.$store.commit("changeIsLoginStatus", this.islogin);
+          localStorage.removeItem("isLogin");
+          this.$emit("changState", "flase");
         }
       });
     }
