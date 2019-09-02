@@ -11,7 +11,12 @@ import topBar from "./components/common/topBar";
 
 export default {
   name: "App",
-  components: {}
+  components: {},
+  methods: {
+    add(){
+      Vue.set()
+    }
+  }
 };
 </script>
 

@@ -2,9 +2,9 @@
   <div class="Top">
     <div class="top">
       <div class="left">
-        <router-link tag="div" to="/home" slot="left">
-          <img class="back" src="@/assets/images/left.png" />
-        </router-link>
+        <div @click="$router.go(-1)" slot="left">
+            <i class="iconfont icon_arrow_left"></i>
+        </div>
       </div>
       <div class="center">
         <span>购物车</span>
@@ -50,15 +50,13 @@
       justify-content: space-between;
       padding: 0 24px;
       box-sizing: border-box;
-
       .left {
         width: 30%;
         display: inline-block;
 
-        img {
-          width: 30spx;
-          height: 40px;
-        }
+          i{
+            font-size: 0.64rem;
+          }
       }
 
       .center {
@@ -72,7 +70,6 @@
           height: 28px;
         }
       }
-
       .right {
         display: inline-block;
         padding-right: 30px;

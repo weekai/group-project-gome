@@ -9,21 +9,75 @@
         <img src="@/assets/images/collect.png" />
         <p>收藏</p>
       </div>
-      <div class="car">
+      <div class="car" @click="goCart">
         <img src="@/assets/images/cart.png" />
         <p>购物车</p>
       </div>
     </div>
-    <div class="center">加入购物车</div>
+    <div class="center" @click="addCart">加入购物车</div>
     <div class="right">立即购买</div>
   </div>
 </template>
 
 <script>
-export default {};
+import { Toast } from "mint-ui";
+import { addCart } from "@/api/index.js";
+
+export default {
+  methods: {
+    addCart() {
+      let good = {
+        id: new Date().valueOf().toString(),
+        isSelect: false,
+        name: "笔记本",
+        msg:
+          "联想(Lenovo)拯救者Y7000英特尔酷睿i5 15.6英寸高色域游戏笔记本电脑(i5-8300H 8G 512G GTX1050Ti72%NTSC)",
+        img: "https://gfs17.gomein.net.cn/T1CfCsBsVv1RCvBVdK_250.jpg?v=1",
+        price: "5799",
+        count: 1
+      };
+      if (!localStorage.getItem("isLogin")) {
+        addCart(good).then(ret => {
+          console.log(ret);
+          if (ret.code == 0) {
+            Toast({
+              message: "已成功加入购物车！",
+              position: "middle",
+              duration: 2000,
+              className: "myToast"
+            });
+          } else {
+            Toast({
+              message: "加入购物车失败，请重试！",
+              position: "middle",
+              duration: 2000,
+              className: "myToast"
+            });
+          }
+        });
+      }else{
+        this.$router.push('/profiles')
+      }
+    },
+    goCart() {
+      this.$router.push("/cart");
+    }
+  }
+};
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+.myToast {
+  .mint-toast-text {
+    padding: 40px 0;
+    display: block;
+    line-height: 50px;
+    font-size: 32px;
+    width: 240px !important;
+    height: 60px !important;
+  }
+}
+
 .add {
   display: flex;
   justify-content: space-between;

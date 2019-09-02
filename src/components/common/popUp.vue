@@ -20,6 +20,10 @@
           <img src="../../assets/images/pop_profiles.png" alt />
           <p>我的国美</p>
         </router-link>
+        <li @click="exit">
+          <i class="iconfont icon_exit"></i>
+          <p>退出登录</p>
+        </li>
       </ul>
     </div>
   </div>
@@ -30,6 +34,10 @@ export default {
   methods: {
     goHome() {
       this.$router.push("/home");
+    },
+    exit(){
+      localStorage.setItem("isLogin", "false");
+      window.history.go(0);
     }
   }
 };
@@ -73,12 +81,14 @@ export default {
       bottom: -2px;
       box-sizing: border-box;
     }
-    li {
+    li{
       height: 100px;
       display: flex;
       align-items: center;
       justify-content: start;
-      img {
+      img,i {
+        font-size: 50px;
+        color: #777;
         width: 48px;
         height: 48px;
         margin: 30px;

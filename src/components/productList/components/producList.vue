@@ -62,12 +62,6 @@ export default {
          this.scroll = new BScroll(".content");
       });
     });
-    // gitGoodList102().then(data => {
-    //   this.list2 = data.result;
-    //   this.$nextTick(() => {
-    //     new BScroll(".content");
-    //   });
-    // });
   },
   methods:{
     scrollTo(){
@@ -78,7 +72,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @w: 100%;
-@h: calc(100%  -  180px) ;
+@h: calc(100% - 180px);
 .content {
   width: @w;
   height: @h;
@@ -93,7 +87,7 @@ export default {
         width: @w;
         height: @h;
         position: relative;
-        a{
+        a {
           display: block;
         }
         img {

@@ -11,7 +11,7 @@
           <pop-up v-show="ispop"></pop-up>
         </div>
       </top-bar>
-       <top-bar v-else>
+      <top-bar v-else>
         <router-link tag="div" to="/home" slot="left">
           <i class="iconfont icon_arrow_left"></i>
         </router-link>
@@ -166,7 +166,7 @@
       </my-gome>
 
       <!-- 登录表单 -->
-      <login-form v-else />
+      <login-form v-else @changState="changState" />
     </div>
   </div>
 </template>
@@ -206,12 +206,14 @@ export default {
   },
   data() {
     return {
-      isLogin: this.$store.state.isLogin,
-      // isLogin:false,
-      ispop: false
+      isLogin: false,
+      ispop:false
     };
   },
   methods: {
+    changState(ret){
+      this.isLogin = ret;
+    },
     goHome() {
       this.$router.push("/home");
     }
@@ -220,14 +222,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#app{
+#app {
   padding-top: 0;
 }
 .profileBg {
   height: 100%;
   background: #fff;
   box-sizing: border-box;
- 
 }
 .profiles {
   display: flex;

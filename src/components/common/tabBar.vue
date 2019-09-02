@@ -12,10 +12,10 @@
       <img src="../../assets/images/optimization.png" alt />
       <p>优选</p>
     </router-link>
-    <router-link tag="div" to="/cart" class="item">
+    <div tag="div" class="item" @click.prevent="isLog">
       <img src="../../assets/images/cart.png" alt />
       <p>购物车</p>
-    </router-link>
+    </div>
     <router-link tag="div" to="/profiles" class="item">
       <img src="../../assets/images/profiles.png" alt />
       <p>我的</p>
@@ -23,7 +23,17 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    isLog() {
+      if(!this.$store.state.isLogin){
+        this.$router.push('/profiles')
+      }else{
+        this.$router.push('/cart')
+      }
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -42,7 +52,7 @@ export default {};
     flex-direction: column;
     align-items: center;
     &.is_active p {
-      color: #fe1e40;
+      color: #aaa;
     }
     img {
       width: 56px;

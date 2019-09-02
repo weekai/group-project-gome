@@ -68,3 +68,11 @@
 .icon_add_heart::before{
     content: '\e619';
 }
+
+.icon_add_success::before{
+    content: '\e637';
+}
+
+.icon_exit::before{
+    content: '\e643';
+}

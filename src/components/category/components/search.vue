@@ -1,9 +1,9 @@
 <template>
   <div>
     <top-bar>
-      <router-link tag="div" to="/home" slot="left">
+      <div class="left" slot="left" @click="$router.go(-1)">
         <i class="iconfont icon_arrow_left"></i>
-      </router-link>
+      </div>
       <div slot="center" class="center">
         <div class="search">
           <input readonly type="text" placeholder="电视内购会领50元券" />
@@ -41,22 +41,22 @@ export default {
   width: 100%;
   height: 100px;
   display: flex;
+  justify-content: space-around;
   position: fixed;
   left: 0;
   top: -2px;
   z-index: 1000;
   .left {
-    width: 60px;
-    img {
-      width: 57.6px;
-      height: 57.6px;
+    i{
+      margin: 0px;
     }
   }
   .center {
+    flex: 1;
     background: #fff;
     position: relative;
     font-size: 24px;
-    width: 560px;
+    margin: 0 60px;
     .search {
       background: r#fff;
     }
@@ -70,7 +70,7 @@ export default {
     }
 
     input {
-      width: 560px;
+      width: 440px;
       font-size: 24px;
       height: 60px;
       border-radius: 36px;
@@ -83,7 +83,6 @@ export default {
   }
 
   .right {
-    width: 160px;
     font-size: 28px;
     img {
       width: 52.78px;
