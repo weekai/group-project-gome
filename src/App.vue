@@ -16,6 +16,9 @@ export default {
     add(){
       Vue.set()
     }
+  },
+  destroyed () {
+    localStorage.removeItem("isLogin");
   }
 };
 </script>
