@@ -86,6 +86,10 @@ export default new Router({
       path: '/productlist',
       name: 'productlist',
       component: ProductList,
+      meta: {
+        cache: true,
+        title: '商品列表'
+      },
     },
     {
       path: '/optimization',

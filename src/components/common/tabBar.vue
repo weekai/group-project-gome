@@ -26,7 +26,7 @@
 export default {
   methods: {
     isLog() {
-      if(!this.$store.state.isLogin){
+      if(!localStorage.getItem("isLogin")){
         this.$router.push('/profiles')
       }else{
         this.$router.push('/cart')

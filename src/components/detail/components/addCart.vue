@@ -36,28 +36,28 @@ export default {
         price: "5799",
         count: 1
       };
-      if (!localStorage.getItem("isLogin")) {
-        addCart(good).then(ret => {
-          console.log(ret);
-          if (ret.code == 0) {
-            Toast({
-              message: "已成功加入购物车！",
-              position: "middle",
-              duration: 2000,
-              className: "myToast"
-            });
-          } else {
-            Toast({
-              message: "加入购物车失败，请重试！",
-              position: "middle",
-              duration: 2000,
-              className: "myToast"
-            });
-          }
-        });
-      }else{
-        this.$router.push('/profiles')
+      if (localStorage.getItem("isLogin") == null) {
+        this.$router.push("/profiles");
+        return;
       }
+      addCart(good).then(ret => {
+        console.log(ret);
+        if (ret.code == 0) {
+          Toast({
+            message: "已成功加入购物车！",
+            position: "middle",
+            duration: 2000,
+            className: "myToast"
+          });
+        } else {
+          Toast({
+            message: "加入购物车失败，请重试！",
+            position: "middle",
+            duration: 2000,
+            className: "myToast"
+          });
+        }
+      });
     },
     goCart() {
       this.$router.push("/cart");
