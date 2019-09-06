@@ -23,30 +23,29 @@ export default {
   data() {
     return {
       isOn: 0,
-      bagList: []
+      bagList: [],
+      rscroll: null
     };
   },
-  created() {
+  mounted() {
     // window.onload = function() {
-      getCateListRight(101).then((ret) => {
-        console.log(ret)
-        this.bagList = ret;
-        new BScroll(".wrapper0", {
+    getCateListRight(101).then(ret => {
+      console.log(ret);
+      this.bagList = ret;
+      this.$nextTick(() => {
+        this.rscroll = new BScroll(".wrapper0", {
           click: true,
           bounce: false
         });
       });
-    // };
+    });
 
     bus.$on("getCid", cid => {
       getCateListRight(cid).then(ret => {
         this.bagList = ret;
-        console.log(this.bagList)
         this.$nextTick(() => {
-          new BScroll(".wrapper1", {
-            click: true,
-            bounce: false
-          });
+          this.rscroll.refresh();
+          this.rscroll.scrollTo(0, 0);
         });
       });
     });
